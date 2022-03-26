@@ -1,0 +1,562 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+	
+img{
+	width: 100%;
+	height: 100%;
+}
+
+html, body{
+	height: 100%;
+}
+
+.bodyDiv{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+main{
+	flex: 1 1 auto;
+}
+
+
+header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 62.5px;
+	/*border-bottom: 1px solid #BFBFBF;*/
+	box-shadow: 0 0 5px 1px rgba(0,0,0,0.25); 
+}
+
+.burger{
+	display: none;
+	visibility: hidden;
+}
+.burgerList{
+	position: absolute;
+	width: 400px;
+	height: 518px;
+	right: 34px;
+	top: 86px;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	transform: translateX(490px);
+	transition: 0.5s;
+	z-index: 2;
+}
+
+.burgerList>li{
+	cursor: pointer;
+	max-width: 280px;
+	width: 100%;
+	height: 74px;
+	text-align: center;
+	align-self: center;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: #868686;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-bottom: 1px solid #AAAAAA;
+	transition: 0.5s;
+}
+.burgerList>li:last-child{
+	border: none;
+}
+.burgerList>li:hover{
+	color: #000000;
+}
+
+.burgerListActive{
+	transform: translateX(0);
+	transition: 0.5s;
+	display: flex;
+	visibility: visible;
+}
+
+.burgerList{
+	transition: 0.5s;
+	display: none;
+	visibility: hidden;
+}
+
+.menuBtn {
+	align-items: center;
+	width: 35px;
+	height: 23px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0 20px;
+}
+
+.menuBtn > span{
+	height: 3px;
+	width: 100%;
+	background-color: black;
+	border-radius: 100px;
+}
+
+
+/*.menuBtn > span,
+.menuBtn > span::before,
+.menuBtn > span::after {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: #616161;
+
+  transition-duration: .25s;
+}
+.menuBtn > span::before {
+  content: '';
+  top: -8px;
+}
+.menuBtn > span::after {
+  content: '';
+  top: 8px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										/*HEADER LEFT*/
+
+.headerCanvas{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1440px;
+	min-width: 320px;
+	width: 100%;
+}
+
+.headerLeft{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 4.5px;
+	max-width: 622px;
+	width: 100%;
+}
+.headerLeftFirst{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 4.5px;
+	margin-left: 11px;
+}
+
+.headerLeftImg{
+	width: 56px;
+	height: 45px;
+	cursor: pointer;
+}
+
+.headerLeftTitle{
+	font-family: Kalam;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.headerLeftSecond{
+	max-width: 448px;
+	min-width: 127px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+.headerLeftCitySearchButton
+{
+	position: absolute;
+	right: 0;
+	height: 100%;
+	border: 1px solid #BFBFBF;
+	border-radius: 0 5px 5px 0;
+	padding: 0 10px;
+	color: #858585;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.headerLeftCitySearchButton:hover
+{
+	padding: 0 15px;
+	transition: 0.3s;
+	background-color: #999999;
+	color: white;
+}
+
+.headerLeftCitySearchInput{
+	max-width: 391px;
+	height: 28px;
+	width: 100%;
+	border: 1px solid #BFBFBF;
+	border-radius: 5px;
+	padding: 0 80px 0 13px;
+	outline: none;
+	color: #858585;
+}
+
+
+
+										/*HEADER RIGHT*/
+
+.headerRightNav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 30px;
+	margin-left: 10px;
+}
+
+.headerRightBtn:last-child{
+	margin:0 21px 0 8px;
+	width: 88px;
+	height: 32px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 5px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.headerRightBtnLogin{
+	margin-left: 4px;
+}
+
+.headerRightBtn:nth-child(2){
+	min-width: 117px;
+}
+
+.headerRightBtn{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 18px;
+	cursor: pointer;
+	border:none;
+	background-color: white;
+}
+
+.headerRightloginSvg{
+	width: 32px;
+	height: 32px;
+}
+
+
+
+
+										/*FOOTER*/
+
+footer{
+	width: 100%;
+	height: 205px;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: space-around;
+}
+
+.footerCanvas{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1332px;
+	width: 100%;
+	height: 100%;
+}
+
+.footerContacts768px{
+	min-width: 360px;
+	height: 176px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin: 0 13px 13px;
+	display: none;
+	visibility: hidden;
+}
+
+.footerContacts768px>h1{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: #505050;
+}
+
+.footerContacts768px>div>address{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 14px;
+	color: #505050;
+	margin-top: 17px;
+}
+
+.footerLinks{
+	display: flex;
+	justify-content: space-between;
+	column-gap: 10px;
+}
+
+.footerCanvasLeft{
+	min-width: 290px;
+	height: 176px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-left: 13px;
+}
+
+
+
+.footerCanvasLeft>h1{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	color: #505050;
+}
+
+.footerCanvasLeft>div{
+	display: flex;
+	flex-direction: column;
+}
+
+.footerMail{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #505050;
+}
+
+.footerPhone{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #505050;
+	margin-top: 14px;
+}
+
+.footerCanvasLeft>div>address{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 14px;
+	color: #505050;
+	margin-top: 17px;
+}
+
+.footerCanvasRight{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+}
+
+.footerCanvasRight>nav{
+	display: flex;
+	column-gap: 30px;
+	margin-bottom: 34px;
+}
+
+.footerCanvasRight>nav>button:last-child{
+	min-width: 134px;
+}
+
+.footerCanvasRight>nav>button:first-child{
+	min-width: 43.13px;
+}
+
+.footerCanvasRight>nav>button{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: #505050;
+	border: none;
+	background-color: white;
+	cursor: pointer;
+}
+
+@media(max-width: 1024px){
+	.headerRightNav{
+		column-gap: 10px;
+	}
+}
+
+@media(max-width: 768px){
+	.headerLeft{
+		justify-content: flex-start;
+		column-gap: 4.5px;
+	}
+	.headerLeftSecond{
+		max-width: 250px;
+		min-width: 127px;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.headerLeftCitySearchInput{
+		max-width: 250px;
+	}
+
+	.headerRightNav{
+		display: none;
+		visibility: hidden;
+		transition: 0.5s
+	}
+
+	.burger{
+		display: block;
+		visibility: visible;
+	}
+
+	.burgerList{
+		justify-content: space-around;
+		flex-direction: column;
+		align-items: center;
+	}
+	.burgerListActive{
+		transform: translateX(0);
+		transition: 0.5s;
+		display: flex;
+		visibility: visible;
+	}
+	.footerCanvas{
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1332px;
+		width: 100%;
+		height: 100%;
+		flex-direction: column-reverse;
+	}
+	.footerCanvasLeft{
+		display: none;
+		visibility: hidden;
+	}
+
+	.footerMail{
+		margin-top: 13px;
+	}
+
+	.footerCanvasLeft>h1{
+		align-self: center;
+	}
+
+	.footerContacts768px{
+		display: flex;
+		visibility: visible;
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
+
+
+@media(max-width: 470px){
+	.burgerList{
+		width: 300px;
+		right: 10px;
+		top: 86px;
+	}
+
+	.burgerList>li{
+		max-width: 200px;
+		height: 74px;
+		font-size: 24px;
+		transition: 0.5s;
+	}
+
+	footer{
+		width: 100%;
+		height: 270px;
+		box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.footerCanvasRight>nav{
+		flex-direction: column;
+
+		margin-bottom: 10px;
+	}
+
+	.footerCanvasRight>nav>button{
+		font-size: 24px;
+		margin-top: 10px;
+	}
+	.headerLeftTitle{
+		display: none;
+		visibility: hidden;
+	}
+	.menuBtn {
+		margin: 0 13px 0 4.5px;
+	}
+}
+
+@media(max-width: 360px){
+	.footerContacts768px{
+		min-width: 300px;
+		margin: 0 10px 10px;
+	}
+
+	.footerMail, .footerPhone{
+		font-size: 16px;
+	}
+}

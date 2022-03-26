@@ -1,0 +1,937 @@
+.myRestaurantCanvas
+{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.myRestaurant__top-content
+{
+	display: flex;
+	max-width: 1355px;
+	min-width: 340px;
+	width: 100%;
+	margin-top: 40.5px;
+	column-gap: 19px;
+	overflow: hidden;
+	border-bottom: 1px solid #B4B4B4;
+	padding-bottom: 23px;
+	margin-bottom: 46px;
+}
+.myRestaurant__top-content--info
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	border-right: 1px solid #B4B4B4;
+	align-items: center;
+	padding-right: 61px;
+}
+.myRestaurant__add-position-popup
+{
+	display: flex;
+	flex-direction: column;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
+	padding: 8px 75px 44px;
+	display: none;
+	visibility: hidden;
+	position: absolute;
+	align-items: center;
+	z-index: 3;
+	max-width: max-content;
+	min-width: 340px;
+	width: calc(100% - 40px);
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.myRestaurant__openBtn
+{
+	border: none;
+	background-color: rgba(0,0,0,0);
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #888888;
+	margin-bottom: 28px;
+	text-align: center;
+	width: 100%;
+}
+.myRestaurant__add-position-popup h3
+{
+	margin-bottom: 63px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #000000;
+}
+.myRestaurant__position-inputs
+{
+	display: flex;
+	flex-direction: column;
+}
+.myRestaurant__position-inputs>input
+{
+	margin-bottom: 28px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #808080;
+	width: 230px;
+	border: none;
+	border-bottom: 1px solid #909090;
+	padding-bottom: 6px;
+	padding: 0 10px;
+	outline: none;
+	text-align: center;
+}
+.myRestaurant__position-inputs>input::placeholder
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #808080;
+	text-align: center;
+}
+
+.myRestaurant__position-popup-middle
+{
+	display: flex;
+	column-gap: 50px;
+	margin-bottom: 57px;
+	flex-wrap: wrap;
+}
+.myRestaurant__position-inputs textarea
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #808080;
+	width: 230px;
+	resize: none;
+	margin-top: 16px;
+	width: 220px;
+	height: 152px;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	outline: none;
+	border-radius: 10px;
+	border: none;
+}
+.myRestaurant__add-position-popup--active
+{
+	display: flex;
+	visibility: visible;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.myRestaurant__add-discount
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #808080;
+}
+.myRestaurant__discount-elem, .myRestaurant__discount-popup-result-canvas>div
+{
+	position: relative;
+	padding: 10px;
+    border-radius: 10px;
+    min-width: 192px;
+    width: 192px;
+    min-height: 140px;
+    max-height: 140px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.myRestaurant__discount-elem>p, .myRestaurant__discount-popup-result-canvas>div>p
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 28px;
+}
+.myRestaurant__add-discount-popup
+{
+	display: none;
+	visibility: hidden;
+	padding: 8px 75px 22px;
+	background-color: #fff;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: center;
+	z-index: 3;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);	
+	cursor: default;
+	min-width: 340px;
+	max-width: max-content;
+	width: calc(100% - 40px);
+}
+.myRestaurant__add-discount-popup>button
+{
+	width: 149px;
+	height: 35px;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #959595;
+	border: none;
+	cursor: pointer;
+}
+.myRestaurant__add-discount-popup>button:hover
+{
+	background: rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+	color: #595959;
+}
+.myRestaurant__discount-popup-select-color
+{
+	display: flex;
+	cursor: pointer;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #909090;
+	margin-bottom: 44px;
+	justify-content: space-between;
+}
+.myRestaurant__discount-popup-select-color>label
+{
+	cursor: pointer;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #888888;
+}
+.myRestaurant__add-discount-popup textarea
+{
+	resize: none;
+	width: 222px;
+	height: 152px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #888888;
+	background: #FFFFFF;
+	border: none;
+	padding: 10px;
+	outline: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+.myRestaurant__discount-popup-result-canvas, .myRestaurant__position-popup-result-canvas
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.myRestaurant__discount-popup-result-canvas>div
+{
+	width: 192px;
+	height: 140px;
+	background: #fff;
+	border: none;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+	border-radius: 10px;
+	margin-bottom: 53px;
+}
+.myRestaurant__discount-popup-result-canvas>p:last-child, .myRestaurant__position-popup-result-canvas>p:last-child
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 16px;
+	color: #888888;
+	width: 207px;
+	margin-bottom: 40px;
+}
+.myRestaurant__position-popup-result-canvas>p:last-child{margin-bottom: 0;}
+.myRestaurant__discount-popup-result-canvas>p:first-child, .myRestaurant__position-popup-result-canvas>p:first-child
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	color: #888888;
+	margin-bottom: 11px;
+}
+.myRestaurant__position-popup-card
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 459px;
+	min-width: 320px;
+	width: 100%;
+	height: 226px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	margin-bottom: 10px;
+}
+.myRestaurant__position-popup-img
+{
+	width: 100%;
+	height: 125px;
+	background-color: yellow;
+}
+.myRestaurant__position-popup-img>img{object-fit: cover;}
+.myRestaurant__clockIcon
+{
+	max-width: 22px;
+	max-height: 22px;
+	min-width: 22px;
+	min-height: 22px;
+}
+.myRestaurant__star-icon
+{
+	min-width: 24px;
+	max-width: 24px;
+	min-height: 24px;
+	max-height: 24px;
+}
+.myRestaurant__popup-position-data,
+.myRestaurant__popup-position-data>div
+{
+	display: flex;
+	align-items: center;
+	column-gap: 5px;
+}
+.myRestaurant__popup-position-middle
+{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	padding: 5px;
+}
+.restaurantDelivery.myRestaurant{margin-right: 0px;}
+.myRestaurant__popup-position-middle h4
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	color: #000000;
+}
+.myRestaurant__popup-position-middle>div{display: flex;}
+.myRestaurant__popup-position-middle>div:first-child
+{
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	margin-bottom: 18px;
+}
+.myRestaurant__popup-price-canvas>p
+{
+	font-family: Caveat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 38px;
+	color: #44D052;
+	margin-right: 10px;
+}
+.myRestaurant__popup-price-canvas
+{
+	align-items: center;
+	column-gap: 10px;
+}
+.myRestaurant__popup-position-add
+{
+	width: 106px;
+	height: 26.63px;
+	background: #1BE35C;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	color: #FFFFFF;
+	border: none;
+	cursor: pointer;
+}
+.myRestaurant__save-position-popup
+{
+	width: 149px;
+	height: 35px;
+	background: #FFFFFF;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.myRestaurant__add-discount-popup h3
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #000000;
+	margin-bottom: 57px;
+}
+.myRestaurant__add-discount-popup--active
+{
+	display: flex;
+	visibility: visible;
+}
+.myRestaurant__discount-popup-middle
+{
+	display: flex;
+	justify-content: space-between;
+	column-gap: 100px;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.myRestaurant__discount-popup-middle>div
+{
+	display: flex;
+	flex-direction: column;
+}
+.myRestaurant__change-main-data-popup
+{
+	display: none;
+	visibility: hidden;
+	padding: 81px 50px 50px;
+	background-color: #fff;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 3;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	max-width:580px;
+	width: calc(100% - 40px);
+}
+.myRestaurant__change-main-data-popup .close, .myRestaurant__add-discount-popup .close, .myRestaurant__add-position-popup .close
+{
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	width: auto;
+	height: 34px;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0);
+}
+.myRestaurant__change-main-data-popup>input
+{
+	border: none;
+	max-width: 480px;
+	min-width: 280px;
+	width: 100%;
+	height: 33px;
+	border-bottom: 1px solid #000;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	color: #808080;
+	outline:none;
+}
+.myRestaurant__change-main-data-popup>input:first-child
+{
+	margin-bottom: 49px;
+	font-size: 24px;
+	line-height: 28px;
+}
+.myRestaurant__change-main-data-popup>input:nth-child(2){margin-bottom: 33px;}
+.myRestaurant__change-main-data-popup>input:nth-child(3){margin-bottom: 80px;}
+.myRestaurant__delete-discount
+{
+	border: none;
+	background-color:rgba(0, 0, 0, 0);
+	cursor: pointer;
+	position: absolute;
+	top: 6px;
+	right: 6px;	
+}
+.myRestaurant__change-main-data-popup-active
+{
+	display: flex;
+	visibility: visible;
+}
+.myRestaurant__change-main-data-save
+{
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border: none;
+	height: 35px;
+	cursor: pointer;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	color: #595959;
+}
+.myRestaurant__change-main-data-save:hover
+{
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.25);
+	color: #595959;
+}
+.myRestaurant__position-descr
+{
+	flex-direction: column;
+	height: 100px;
+	width: auto;
+	margin: 0 20px 8px 0;
+	box-sizing: border-box;
+}
+.myRestaurant__cards-data
+{
+	margin-right: 0;
+	width: 100%;
+	justify-content: space-between;
+}
+.myRestaurant__cards-data>.partnerAdverstingRestaurantsBuySectionPrice
+{
+	margin-right: 10px;
+}
+.myRestaurant__description
+{
+	width: 100%;
+	margin: 8px 18px 8px 0;
+}
+.myRestaurant__description-canvas
+{
+	display: flex;
+	height: 100%;
+}
+.myRestaurant__position-name
+{
+	margin-top: 8px;
+	width: auto;
+	height: auto;
+}
+.myRestaurant__restaurantsCanvas{cursor: default;}
+.myRestaurant__change-card-button
+{
+	border: none;
+	color: #808080;
+	background-color: rgba(0, 0, 0,0);
+	cursor: pointer;
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+
+}
+.myRestaurant__add-discount>p{cursor: pointer;}
+.myRestaurant__tags-form
+{
+	left: 0;
+	width: 719px;
+}
+.myRestaurant__change-header-data
+{
+	display: flex;
+	cursor: pointer;
+}
+.myRestaurant__change-header-data
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	display: flex;
+	align-items: flex-end;
+	color: #808080;
+}
+.myRestaurant__top-content--wrapper-top>h2
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 56px;
+	margin-bottom: 24px;
+	color: #000000;
+}
+.myRestaurant__delete-position
+{
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	cursor: pointer;
+}
+.myRestaurant__mainNavSelectCanvas{margin-right: 102px;}
+.myRestaurant__add-position
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	color: #000000;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	color: #808080;
+}
+.arrow-left{margin-right: 5px;}
+.arrow-right{margin-left: 5px;}
+.myRestaurant__top-content--wrapper-bottom
+{
+	display: flex;
+	column-gap: 29px;
+	height: 29px;
+	margin-bottom: 36px;
+}
+.myRestaurant__delivery-icon
+{
+	min-width: 35px;
+	height: 25.5px;
+}
+.myRestaurant__top-content--wrapper-bottom>p
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 60px;
+	line-height: 23px;
+	color: #000000;
+}
+.myRestaurant__top-content--wrapper-bottom>div
+{
+	display: flex;
+	align-items: flex-end;
+}
+.myRestaurant__advertising-navigation
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	column-gap: 50px;
+}
+.myRestaurant__advertising-navigation>button
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 40px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+.myRestaurant__advertising-navigation>button:hover
+{
+	background-color: #E1E1E1;
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);
+}
+.myRestaurant__top-content--wrapper-bottom>div>p
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	color: #000000;
+}
+.myRestaurant__top-content--wrapper-bottom>div:nth-child(2){column-gap: 10px;}
+.myRestaurant__top-content--wrapper-bottom>div:nth-child(2)>p
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	min-width: max-content;
+	color: #000000;
+}
+.myRestaurant__top-content--wrapper-bottom>div:nth-child(1)
+{
+	column-gap: 10px;
+	align-items: flex-end;
+}
+.myRestaurant__top-content--wrapper-bottom>div:nth-child(1)>p
+{
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	color: #000000;
+	min-width: max-content;
+}
+.myRestaurant__clock-icon
+{
+	min-width: 26px;
+	height: 24.89px;
+}
+.myRestaurant__top-content--advertising
+{
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.myRestaurant__top-content--advertising>ul
+{
+	column-gap: 50px;
+	display: flex;
+	margin-bottom: 20px;
+	transition: 0.5s;
+}
+.myRestaurant__top-content--advertising>ul>li
+{
+	min-width: 192px;
+	height: 140px;
+}
+
+.myRestaurant__main-content
+{
+	max-width: 1355px;
+	width: 100%;
+}
+.myRestaurant__main-content>div:first-child
+{
+	display: flex;
+	align-items: center;
+	margin-bottom: 77px;
+	margin-left: 10px;
+}
+.myRestaurant__search
+{
+	width: 236px;
+	height: 35px;
+	background: #FFFFFF;
+	border: 1px solid #BFBFBF;
+	box-sizing: border-box;
+	border-radius: 9px;
+	margin-right: 59px;
+	padding: 0 10px;
+}
+.myRestaurant__search::placeholder
+{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	letter-spacing: 0.09em;
+	color: rgba(0, 0, 0, 0.59);
+	text-align: center;
+}
+
+.myRestaurant__section-name
+{
+	margin: 0 0 22px 10px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	border-color: red;
+	color: #808080;
+}
+.myRestaurant__cards-canvas
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 100%;
+	column-gap: 10px;
+	margin-bottom: 50px;
+	row-gap: 40px; 
+}
+@media(max-width: 1100px)
+{
+	.myRestaurant__cards-canvas
+	{
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	.myRestaurant__tags-form
+	{
+		left: -100%;
+		width: 450px;
+	}
+}
+@media(max-width: 768px)
+{
+	.myRestaurant__position-popup-middle
+	{
+		flex-direction: column;
+		align-items: center;
+	}
+	.myRestaurant__add-position-popup
+	{
+		transform: translateY(-25%) translateX(-50%);
+	}
+	.myRestaurant__discount-popup-result-canvas>div{margin-bottom: 20px;}
+	.myRestaurant__discount-popup-middle{flex-direction: column;}
+	.myRestaurant__add-discount-popup{transform: translateY(-30%) translateX(-50%);}
+	.myRestaurant__add-discount-popup textarea{margin-bottom: 50px;}
+	.myRestaurant__top-content--wrapper-top>h2{margin: 0;}
+	.myRestaurant__add-discount{margin: 0;}
+	.myRestaurant__section-name
+	{
+		margin: 0 auto;
+		text-align: center;		
+	}
+	.myRestaurant__top-content
+	{
+		margin: 23px 0 20px 0;
+		flex-wrap: wrap;
+		row-gap:30px;
+		column-gap: 0;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.myRestaurant__main-content>div:first-child
+	{
+		margin: 0 0 10px 10px;
+		justify-content: center;
+	}
+	.myRestaurant__mainNavSelectCanvas{margin: 0 20px 0 0;}
+	.myRestaurant__section-name{margin: 20px 0 10px 0;}
+	.myRestaurant__top-content--advertising>ul>li{min-width: 150px;}
+	.myRestaurant__top-content--wrapper-bottom>div:nth-child(1)
+	{
+		align-items: flex-start;
+		align-self: center;
+	}
+	.myRestaurant__top-content--wrapper-bottom>div:nth-child(1)>p
+	{
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.myRestaurant__top-content--wrapper-bottom>div:nth-child(2)>p
+	{
+		font-size: 16px;
+		line-height: 23px;
+	}
+	.myRestaurant__top-content--advertising{padding: 0 20px;}
+	.myRestaurant__top-content--advertising>ul{column-gap: 25px;}
+	.myRestaurant__top-content--wrapper-bottom
+	{
+		column-gap: 10px;
+		align-items: flex-start;
+		flex-direction: column;
+		margin: 0;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+	}
+	.myRestaurant__top-content--info
+	{
+		row-gap:20px;
+		height: 100px;
+		justify-content: space-between;
+		margin: 0 30px;
+		flex-direction: row;
+		padding: 0;
+		align-items: center;
+		border: none;
+		column-gap: 10px;
+	}
+
+}
+
+@media(max-width: 500px)
+{
+	.myRestaurant__change-main-data-popup{padding: 81px 20px 50px;}
+	.myRestaurant__search{margin-right: 10px;}
+	.myRestaurant__mainNavSelect
+	{
+		min-width: auto;
+	    font-size: 16px;
+	}
+	.myRestaurant__mainNavArrow
+	{
+		width: 15px;
+		height: 15px;
+	}
+	.myRestaurant__top-content--info
+	{
+		flex-direction: column;
+		height: auto;
+		row-gap: 10px;
+	}
+	.myRestaurant__top-content
+	{
+		height: auto;
+		flex-direction: column;
+	}
+	.myRestaurant__top-content--wrapper-bottom{row-gap: 10px;}
+	.myRestaurant__add-discount{margin: 0;}
+	.myRestaurant__main-content>div:first-child
+	{
+		flex-direction: column;
+		row-gap: 10px;
+		margin-left: none;
+		align-items: center;
+	}
+	.myRestaurant__mainNavSelectCanvas, .myRestaurant__search{margin: 0 0 0 0;}
+	.myRestaurant__mainNavSelectCanvas{margin-bottom: 20px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
