@@ -5,6 +5,15 @@ const app = {
 		  tagActive: false,
 
 		  width: 0,
+// RESTAURANT--------------------------------------------------
+	RestaurantData:{
+		id: '',
+		name: 'Кавказ',
+		star: '5.0',
+		tag: '',
+		free: 1500,
+		time: 50,
+	},
 
 // MY RESTAURANT CARDS--------------------------------------------------
 

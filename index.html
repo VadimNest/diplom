@@ -68,6 +68,153 @@
 		</header>
 
 		<main>
+			<section v-if="route=='restaurant'" class="myRestaurantCanvas">
+				{{RestaurantData.id}}
+				<div class="myRestaurant__top-content">
+					<div class="myRestaurant__top-content--info">
+
+						<div class="myRestaurant__top-content--wrapper-top">
+							<h2>{{RestaurantData.name}}</h2>
+						</div>
+
+						<div class="myRestaurant__top-content--wrapper-bottom">
+							<div>
+								<svg class="myRestaurant__delivery-icon" width="35" height="26" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+									
+									<path d="M34.7864 10.1242L27.4947 3.04087C27.358 2.90806 27.1728 2.83336 26.9791 2.83336H20.4166V0.708355C20.4167 0.316824 20.0905 0 19.6875 0H2.91669C1.30881 0 0 1.27068 0 2.83336V20.5417C0 21.7135 0.98123 22.6667 2.1875 22.6667H3.91467C4.51855 24.3121 6.1222 25.5 8.02081 25.5C9.91949 25.5 11.5231 24.3121 12.1271 22.6666H22.873C23.4769 24.3121 25.0805 25.5 26.9792 25.5C28.8779 25.5 30.4815 24.3121 31.0855 22.6666H32.0834C33.6913 22.6666 35.0001 21.396 35.0001 19.8333V10.625C35 10.4369 34.9231 10.257 34.7864 10.1242ZM8.02081 24.0834C6.41293 24.0834 5.10412 22.8127 5.10412 21.25C5.10412 19.6873 6.41293 18.4166 8.02081 18.4166C9.62869 18.4166 10.9375 19.6874 10.9375 21.25C10.9375 22.8126 9.62869 24.0834 8.02081 24.0834ZM26.9792 24.0834C25.3713 24.0834 24.0625 22.8126 24.0625 21.25C24.0625 19.6874 25.3713 18.4166 26.9792 18.4166C28.5871 18.4166 29.8959 19.6873 29.8959 21.25C29.8959 22.8127 28.5871 24.0834 26.9792 24.0834ZM33.5417 19.8334C33.5417 20.6143 32.888 21.25 32.0834 21.25H31.3542C31.3542 18.9064 29.3917 17 26.9792 17C24.5667 17 22.6042 18.9064 22.6042 21.25H12.3958C12.3958 18.9064 10.4333 17 8.02081 17C5.60827 17 3.64581 18.9064 3.64581 21.25H2.1875C1.78589 21.25 1.45831 20.9325 1.45831 20.5416V2.83336C1.45831 2.05242 2.11203 1.41671 2.91662 1.41671H18.9583V3.54171C18.9583 3.93324 19.2845 4.25007 19.6875 4.25007H26.6772L33.5417 10.9184V19.8334Z" fill="black"/>
+									<path d="M8.02081 7.08337H5.10419C4.70114 7.08337 4.375 7.4002 4.375 7.79173V13.4584C4.375 13.8499 4.70114 14.1667 5.10419 14.1667C5.50724 14.1667 5.83338 13.8499 5.83338 13.4584V11.3334H7.29169C7.69474 11.3334 8.02088 11.0166 8.02088 10.625C8.02088 10.2335 7.69474 9.91667 7.29169 9.91667H5.83331V8.50002H8.02081C8.42386 8.50002 8.75 8.1832 8.75 7.79166C8.75 7.4002 8.42386 7.08337 8.02081 7.08337Z" fill="black"/>
+									<path d="M19.6876 8.49998C20.0907 8.49998 20.4168 8.18316 20.4168 7.79162C20.4168 7.40009 20.0907 7.08327 19.6876 7.08327H16.7709C16.3679 7.08327 16.0417 7.40009 16.0417 7.79162V13.4583C16.0417 13.8498 16.3679 14.1666 16.7709 14.1666H19.6876C20.0907 14.1666 20.4168 13.8498 20.4168 13.4583C20.4168 13.0667 20.0907 12.7499 19.6876 12.7499H17.5001V11.3333H18.9584C19.3615 11.3333 19.6876 11.0165 19.6876 10.6249C19.6876 10.2334 19.3615 9.91656 18.9584 9.91656H17.5001V8.49998H19.6876Z" fill="black"/>
+									<path d="M25.5209 8.49998C25.9239 8.49998 26.2501 8.18316 26.2501 7.79162C26.2501 7.40009 25.9239 7.08327 25.5209 7.08327H22.6042C22.2011 7.08327 21.875 7.40009 21.875 7.79162V13.4583C21.875 13.8498 22.2011 14.1666 22.6042 14.1666H25.5209C25.9239 14.1666 26.2501 13.8498 26.2501 13.4583C26.2501 13.0667 25.9239 12.7499 25.5209 12.7499H23.3334V11.3333H24.7917C25.1947 11.3333 25.5209 11.0165 25.5209 10.6249C25.5209 10.2334 25.1947 9.91656 24.7917 9.91656H23.3334V8.49998H25.5209Z" fill="black"/>
+									<path d="M12.3958 7.08337H10.9374C10.5344 7.08337 10.2083 7.4002 10.2083 7.79173V13.4584C10.2083 13.8499 10.5344 14.1667 10.9374 14.1667C11.3405 14.1667 11.6666 13.8499 11.6666 13.4584V11.3334H12.3958C12.7974 11.3334 13.125 11.6509 13.125 12.0417V13.4584C13.125 13.8499 13.4512 14.1667 13.8542 14.1667C14.2572 14.1667 14.5834 13.8499 14.5834 13.4584V12.0417C14.5834 11.498 14.3726 11.0014 14.0251 10.6251C14.3726 10.2488 14.5834 9.75211 14.5834 9.20844C14.5833 8.03657 13.602 7.08337 12.3958 7.08337ZM12.3958 9.91667H11.6666V8.50002H12.3958C12.7974 8.50002 13.1249 8.81751 13.1249 9.20838C13.1249 9.59918 12.7974 9.91667 12.3958 9.91667Z" fill="black"/>
+								</svg>
+
+								<p>От {{RestaurantData.free}}р</p>
+							</div>
+
+							<div>
+								<svg class="myRestaurant__clock-icon" width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+									
+									<path d="M13 0C5.83182 0 0 5.58189 0 12.4429C0 19.3039 5.83182 24.8857 13 24.8857C20.1682 24.8857 26 19.3039 26 12.4429C26 5.58189 20.1682 0 13 0ZM13.8543 23.2196V21.5559C13.8543 21.1043 13.4718 20.7382 13 20.7382C12.5282 20.7382 12.1457 21.1043 12.1457 21.5559V23.2196C6.59921 22.8206 2.15763 18.5693 1.74073 13.2606H3.47895C3.95076 13.2606 4.33326 12.8945 4.33326 12.4429C4.33326 11.9913 3.95076 11.6252 3.47895 11.6252H1.74073C2.15763 6.3164 6.59921 2.06516 12.1457 1.66613V3.32986C12.1457 3.78144 12.5282 4.14755 13 4.14755C13.4718 4.14755 13.8543 3.78144 13.8543 3.32986V1.66613C19.4008 2.06516 23.8424 6.3164 24.2593 11.6252H22.521C22.0492 11.6252 21.6667 11.9913 21.6667 12.4429C21.6667 12.8945 22.0492 13.2606 22.521 13.2606H24.2593C23.8423 18.5693 19.4008 22.8205 13.8543 23.2196Z" fill="#000002"/>
+									<path d="M18.5198 11.6252H13.7465L9.89802 5.89522C9.64275 5.51527 9.11423 5.40548 8.71737 5.64959C8.32052 5.8938 8.20559 6.39968 8.46074 6.77964L12.5614 12.8851C12.5627 12.8869 12.5642 12.8885 12.5655 12.8904C12.5837 12.917 12.6033 12.9426 12.6245 12.967C12.6299 12.9732 12.6358 12.9786 12.6415 12.9847C12.6574 13.0018 12.6738 13.0185 12.6911 13.0343C12.7002 13.0426 12.7095 13.0506 12.7188 13.0584C12.7348 13.0717 12.7513 13.0844 12.7681 13.0965C12.7771 13.1029 12.7858 13.1097 12.7949 13.1157C12.8208 13.1328 12.8474 13.1488 12.8752 13.1631C12.8789 13.1649 12.8827 13.1665 12.8865 13.1683C12.9117 13.1809 12.9374 13.1921 12.9639 13.2022C12.972 13.2053 12.9803 13.208 12.9885 13.2108C13.0112 13.2187 13.0342 13.2257 13.0578 13.2318C13.0669 13.2341 13.0759 13.2364 13.085 13.2384C13.1086 13.2438 13.1325 13.2478 13.1567 13.2512C13.1654 13.2524 13.174 13.254 13.1828 13.255C13.2128 13.2583 13.2432 13.2601 13.2741 13.2603C13.2764 13.2603 13.2786 13.2607 13.2807 13.2607C13.2812 13.2607 13.2817 13.2606 13.2823 13.2606H18.5197C18.9915 13.2606 19.374 12.8945 19.374 12.4429C19.3741 11.9913 18.9916 11.6252 18.5198 11.6252Z" fill="#000002"/>
+								</svg>
+
+								<p>От {{RestaurantData.time}}мин</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="myRestaurant__top-content--advertising" ref="myRestaurantDiscountElemsCanvas" v-if="myRestaurantSliderSalesElems.length">
+						<ul ref="myRestaurantDiscountElems" >
+							<li ref="myRestaurantDiscountChild" class="myRestaurant__discount-elem" v-for="(card, index) in myRestaurantSliderSalesElems" :style="{backgroundColor: (card.backgroundColor)}">
+								<p>{{card.p}}</p>
+							</li>
+						</ul>
+
+						<div class="myRestaurant__advertising-navigation">
+							<button @click="myRestaurantSalesSlider(0)">
+								<svg class="arrow-left" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M21.4595 6.0815C22.18 5.37612 22.18 4.23404 21.4595 3.52865C20.7402 2.8243 19.5718 2.82326 18.8514 3.52865L8.54032 13.7229C7.81989 14.4282 7.81989 15.5714 8.54032 16.2768L18.8514 26.471C19.5718 27.1763 20.7391 27.1763 21.4595 26.471C22.18 25.7656 22.18 24.6235 21.4606 23.9181L13.0045 15.0001L21.4595 6.0815Z" fill="#686868"/>
+								</svg>
+							</button>
+
+							<button @click="myRestaurantSalesSlider(1)">
+								<svg class="arrow-right" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.54045 23.9185C7.82003 24.6239 7.82003 25.766 8.54045 26.4714C9.2598 27.1757 10.4282 27.1767 11.1486 26.4714L21.4597 16.2771C22.1801 15.5718 22.1801 14.4286 21.4597 13.7232L11.1486 3.52904C10.4282 2.82365 9.26088 2.82365 8.54045 3.52904C7.82003 4.23443 7.82003 5.37651 8.53938 6.0819L16.9955 14.9999L8.54045 23.9185Z" fill="#686868"/>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="myRestaurant__main-content">
+					<div>
+						<input type="text" placeholder="Поиск блюд" class="myRestaurant__search">
+						
+						<div class="mainNavSelectCanvas myRestaurant__mainNavSelectCanvas">
+							<p class="mainNavSelect myRestaurant__mainNavSelect" @click="tagActive=!tagActive">Тег: Все блюда</p>
+							<img src="styles/img/arrow.svg" class="mainNavArrow myRestaurant__mainNavArrow" :class="{'home__mainNavArrow--active': tagActive}">
+
+							<form action="" class="home__tags-form myRestaurant__tags-form" :class="{'home__tags-form--active':tagActive}">
+								<ul class="mainNavSelectList myRestaurant__select-list">
+									<li>
+										<p>Первое</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Второе</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>fast-food</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Рыба</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Мясо</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Птица</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Гарниры</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Гарниры</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<p>Гарниры</p>
+										<input type="checkbox" id="">
+									</li>
+									<li>
+										<button type="submite" class="home__filters-submite-button">
+											<p>Применить</p>
+										</button>
+									</li>
+								</ul>
+							</form>
+						</div>
+					</div>
+
+					<div>
+						<ul class="myRestaurant__cards-canvas">
+							<li class="partnerRestaurantsCanvas myRestaurant__restaurantsCanvas" v-for="(card, index) in myRestaurantCardsData">
+								<div class="restaurantImageDescr">
+									<div class="restaurantImageDescrFlex">
+										<img :src="card.image" class="partnerAdverstingRestaurantsImg" alt="Restaurant Image">
+									
+										<p class="partnerAdverstingRestaurantsProductDescr">{{card.description}}</p>
+									</div>
+								</div>
+
+								<div class="myRestaurant__description-canvas">
+									<div class="partnerAdverstingRestaurantsDescr myRestaurant__position-descr">
+										<div class="partnerAdverstingPositionName myRestaurant__position-name">{{card.name}}</div>
+
+										<div class="partnerAdverstingRestaurantsStarCanvas myRestaurant__cards-data">
+											<p class="partnerAdverstingRestaurantsBuySectionPrice">{{card.price}}р</p>
+											<img src="styles/img/clock.svg" alt="Clock" class="clockIcon">
+											<p class="clockTime">{{card.time}}мин</p>
+										</div>
+									</div>
+
+									<div class="myRestaurant__description">
+										<p>{{card.description}}</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</section>
+
 			<section v-if="route=='home'" class="homeCanvas">
 				<div class="home__partner-advertising-sales-canvas">
 					<div class="home__partner-advertising-sales-slider-canvas">
@@ -83,8 +230,6 @@
 							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M21.4595 6.0815C22.18 5.37612 22.18 4.23404 21.4595 3.52865C20.7402 2.8243 19.5718 2.82326 18.8514 3.52865L8.54032 13.7229C7.81989 14.4282 7.81989 15.5714 8.54032 16.2768L18.8514 26.471C19.5718 27.1763 20.7391 27.1763 21.4595 26.471C22.18 25.7656 22.18 24.6235 21.4606 23.9181L13.0045 15.0001L21.4595 6.0815Z" fill="#686868"/>
 							</svg>
-
-
 						</div>
 
 						<div class="home__sales-arrow" @click="slider(1)">
@@ -146,8 +291,6 @@
 				</div>
 
 				<div class="lineUnderAdverstising"></div>
-
-
 
 				<div class="mainNav">
 					<input class="mainNavSearchInput" v-model="searchRestaurants" type="text" placeholder="Поиск ресторана" v-if="mainNavRoute == 'restaurants'">
@@ -215,8 +358,7 @@
 				</div>
 
 				<ul class="cardsCanvas" v-if="mainNavRoute == 'restaurants'">
-					
-					<li class="partnerRestaurantsCanvas" v-for="(restaurant, index) in searchRestaurantsCards">
+					<li class="partnerRestaurantsCanvas" v-for="(restaurant, index) in searchRestaurantsCards" @click="route='restaurant'; RestaurantData.id=restaurant.id">
 						<div class="restaurantImageDescr">
 							<div class="restaurantImageDescrFlex">
 								<img :src="restaurant.image" class="partnerAdverstingRestaurantsImg" alt="Restaurant Image">
