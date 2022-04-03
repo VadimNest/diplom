@@ -1,0 +1,46 @@
+.couriers__title
+{
+	margin-bottom: 44px;
+	padding-right: 0;
+	justify-content: center;
+}
+.couriers__title>p
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 35px;
+	text-align: center;
+	color: #FFFFFF;
+	max-width: 604px;
+}
+.couriers__form-second-row>div{width: calc(50% - 15px);}
+.couriers__form-second-row>div:last-child
+{
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.forCouriers__send
+{
+	height: 63px;
+	width: 100%;
+}
+.couriers__help
+{
+	max-width: 313px;
+	margin: 0 auto;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+@media(max-width: 768px)
+{
+	.couriers__form-second-row{flex-direction: column;}
+	.couriers__form-second-row>div{width: 100%;}
+}

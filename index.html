@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="styles/indexStyle.css">
 	<link rel="stylesheet" type="text/css" href="styles/myRestaurantStyle.css">
 	<link rel="stylesheet" type="text/css" href="styles/basketStyle.css">
+	<link rel="stylesheet" type="text/css" href="styles/aboutStyle.css">
+	<link rel="stylesheet" type="text/css" href="styles/forRestaurantsStyles.css">
+	<link rel="stylesheet" type="text/css" href="styles/couriersStyles.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +72,6 @@
 
 		<main>
 			<section v-if="route=='restaurant'" class="myRestaurantCanvas">
-				{{RestaurantData.id}}
 				<div class="myRestaurant__top-content">
 					<div class="myRestaurant__top-content--info">
 
@@ -806,7 +808,6 @@
 				</form>
 			</section>
 
-
 			<section v-if="route=='basket'" class="basket">
 				<form class="basket__form">
 					<h1>Кавказ</h1>
@@ -833,6 +834,130 @@
 						<button type="button">Заказать</button>	
 					</div>
 				</form>
+			</section>
+
+			<section v-if="route=='about'" class="about">
+				<div class="about__background about__background-about-page">
+					<div class="container about__container">
+						<div class="about_descr">
+							<p>Что такое FoodMood?</p>
+							<p>
+								Мы специализируемся на быстрейшей доставке готовой еды, используя в этих целях все виды транспорта, будь то автомобиль  или велосипед.
+								Такое стало возможно благодаря объединению в себе различных  видов ресторанов и курьеров.
+							</p>
+							<p>
+								При выборе ресторана пользователь может ориентироваться на время доставки, рейтинг заведения, наличие спецпредложений.
+								После добавления в корзину блюда, выбирается способ оплаты и оформляется заказ. Статус которого можно отслеживать.
+								Все цены совпадают с указанными в ресторанах. 
+							</p>
+						</div>
+
+						<form class="about__form">
+							<div class="about__form-first-row">
+								<p>Написать в техподдержку</p>
+								<button type="button">Отправить</button>
+							</div>
+							<div class="about__form-second-row">
+								<div>
+									<input type="text" name="name" placeholder="Имя">
+									<input type="text" name="phone" placeholder="Телефон">
+								</div>
+								<textarea></textarea>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="container">
+					<h2>Современные способы доставки</h2>
+					<div class="about__images-wrapper">
+						<div class="about__images-item">
+							<div class="about__image">
+								<img src="styles/img/Самокат.png">
+							</div>
+							<p>Электросамокат</p>
+						</div>
+						<div class="about__images-item about__images-item--reverse">
+							<div class="about__image about__image-bicycle">
+								<img src="styles/img/велосипед.png">
+							</div>
+							<p>Электровелосипед</p>
+						</div>
+						<div class="about__images-item">
+							<div class="about__image">
+								<img src="styles/img/авто.png">
+							</div>
+							<p>Автомобиль</p>
+						</div>
+						<div class="about__images-item about__images-item--reverse">
+							<div class="about__image">
+								<img src="styles/img/дрон.png">
+							</div>
+							<p>Дрон</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section v-if="route=='forRestaurants'" class="about">
+				<div class="about__background">
+					<div class="container about__container">
+						<div class="about_descr">
+							<p>Присоединись к команде FoodMood!</p>
+							<p>
+								Владеете собственным рестораном или кафе? Откройте его на FoodMood! 
+							</p>
+							<p>
+								Бесплатное размещение позиций, в любое время суток. Профессиональная команда, использующая все современные способы доставки. С нами вы можете быть уверены - блюдо будет доставлено горячим и вовремя!
+							</p>
+						</div>
+
+						<form class="about__form">
+							<div class="about__form-first-row--firRestaurants">
+								<p class="about__form-forRestaurants-title">Регистрация заведения</p>
+							</div>
+							<div class="about__form-second-row about__form-second-row--forRestaurants">
+								<input type="email" name="email" placeholder="Mail" required>
+								<input type="password" name="Пароль" placeholder="Пароль" required>
+								<input type="password" name="Пароль2" placeholder="Повторите пароль" required>
+								<input type="text" name="name" placeholder="Название заведения" required>
+								<input type="text" name="city" placeholder="Ваш город" required>
+								<button type="button" class="forRestaurants__registration">Регистрация</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<section v-if="route=='forCouriers'" class="about">
+				<div class="about__background">
+					<div class="container about__container">
+						<div class="about_descr">
+							<p>Присоединись к команде FoodMood!</p>
+							<p>
+								Эй! У FoodMood есть для тебя работа!
+								Работай в доставке блюд по своему городу. Мы используем все современные средства перевозки, начиная с велосипеда, заканчивая дронами. Опыт работы не трубется. Наша профессиональная команда научит тебя всему, что необходимо. Зарабатывай с первого дня. 
+							</p>
+						</div>
+
+						<form class="about__form">
+							<div class="about__form-first-row couriers__title">
+								<p>Отправьте свои контактные данные, мы свяжемся с Вами в ближайшее время</p>
+							</div>
+							<div class="about__form-second-row couriers__form-second-row">
+								<div>
+									<input type="text" name="name" placeholder="Имя">
+									<input type="text" name="phone" placeholder="Телефон">
+									<input type="text" name="city" placeholder="Ваш город">
+								</div>
+								<div>
+									<button type="button" class="forRestaurants__registration forCouriers__send">Отправить</button>
+									<p class="couriers__help">Либо обратитесь в ближайший офис FoodMood.</p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</section>
 		</main>
 
@@ -887,9 +1012,9 @@
 
 				<div class="footerCanvasRight">
 					<nav>
-						<button>О нас</button>
-						<button>Ресторанам</button>
-						<button>Курьерам</button>
+						<button @click="route='about'">О нас</button>
+						<button @click="route='forRestaurants'">Ресторанам</button>
+						<button @click="route='forCouriers'">Курьерам</button>
 						<button>Обратная связь</button>
 					</nav>
 				</div>

@@ -1,0 +1,189 @@
+.about
+{
+	width: 100%;
+	height: 100%;
+}
+.about__background
+{
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	background: url('img/aboutBackground.jpg') no-repeat center;
+	background-size: cover;
+}
+.about__background-about-page
+{
+	margin-bottom: 34px;
+	min-height: 0;
+}
+.about h2
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 42px;
+	color: #000000;
+	text-align: center;
+	margin-bottom: 42px;
+}
+.about_descr
+{
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	padding: 16px 70px 0;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 145.19%;
+	color: #000000;
+	max-width: 1227px;
+}
+.about_descr>p{padding-bottom: 16px;}
+.container
+{
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+}
+.about__container{padding: 72px 0 26px;}
+.about__form
+{
+	max-width: 1058px;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 44px 25px 28px 14px;
+}
+.about__form-first-row
+{
+	display: flex;
+	justify-content: space-between;
+	padding-right: 42px;
+}
+.about__form-first-row>p
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 23px;
+	color: #FFFFFF;
+}
+.about__form-first-row>button
+{
+	width: 130.9px;
+	height: 34px;
+	background: #1BE35C;
+	border: none;
+	cursor: pointer;
+	border-radius: 15px 15px 0px 0px;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 21px;
+	color: #FFFFFF;
+}
+.about__form-second-row{display: flex;}
+.about__form-second-row>div
+{
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	gap: 33px;
+}
+.about__form-second-row input,
+.about__form-second-row input::placeholder
+{
+	border: none;
+	margin-right: 20px;
+	padding: 20px 10px;
+	text-align: center;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 23px;
+	color: #8F8F8F;
+	outline: none;
+}
+.about__form-second-row>textarea
+{
+	resize: none;
+	width: calc(70% - 20px);
+	border: none;
+	padding: 20px;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 23px;
+	outline: none;
+	color: #8F8F8F;
+}
+.about__images-wrapper
+{
+	display: flex;
+	flex-direction: column;
+}
+.about__images-item
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 50px;
+	padding-top: 50px;
+}
+.about__images-item:not(:last-child)
+{
+	border-bottom: 1px solid #000000;
+	padding-bottom: 20px;
+}
+.about__images-item:last-child{margin-bottom: 70px;}
+.about__images-item>p
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 42px;
+	color: #000000;
+}
+.about__images-item--reverse{flex-direction: row-reverse;}
+.about__image
+{
+	width: 429px;
+	height: 276px;
+}
+.about__image-bicycle
+{
+	width: 300px;
+	height: 368px;	
+}
+.about__image>img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+@media(max-width: 768px)
+{
+	.about__images-item{flex-direction: column;}
+	.about_descr{padding: 16px 16px 0;}
+	.about__form-second-row
+	{
+		flex-direction: column-reverse;
+		gap: 30px;
+	}
+	.about__form-second-row>div{width: 100%;}
+	.about__form-second-row input,
+	.about__form-second-row textarea
+	{width: 100%;}
+	.about__form-first-row
+	{
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+		gap: 30px;
+	}	
+}

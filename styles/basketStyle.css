@@ -64,6 +64,7 @@
 	line-height: 28px;
 	color: #FFFFFF;
 	transition: .3s;
+	cursor: pointer;
 }
 .basket__counter:hover
 {
