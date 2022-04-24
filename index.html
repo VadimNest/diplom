@@ -13,6 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="styles/aboutStyle.css">
 	<link rel="stylesheet" type="text/css" href="styles/forRestaurantsStyles.css">
 	<link rel="stylesheet" type="text/css" href="styles/couriersStyles.css">
+	<link rel="stylesheet" type="text/css" href="styles/personal.css">
+	<link rel="stylesheet" type="text/css" href="styles/history.css">
+	<link rel="stylesheet" type="text/css" href="styles/discounts.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +31,7 @@
 			<div class="headerCanvas">
 
 				<div class="headerLeft">
-					<div class="headerLeftFirst">
+					<div class="headerLeftFirst" @click="route='home'">
 						<img src="styles/img/HeaderLogo.svg" class="headerLeftImg">
 						<p class="headerLeftTitle">FoodMood</p>
 					</div>
@@ -956,6 +959,94 @@
 								</div>
 							</div>
 						</form>
+					</div>
+				</div>
+			</section>
+
+			<section v-if="route=='personal'" class="personal">
+				<div class="container">
+					<h1 class="personal__title">Изменение данных учетной записи</h1>
+					<div class="personal__password-form-wrapper">
+						<form  class="personal__password-form">
+							<h2>Изменение пароля</h2>
+							<input type="" name="" placeholder="Введите старый пароль">
+							<input type="" name="" placeholder="Введите новый пароль">
+							<input type="" name="" placeholder="Повторите пароль">
+							<button type="button">Изменить пароль</button>
+						</form>
+						<div  class="personal__logo-image-wrapper">
+							<img src="styles/img/LogoBackground.png" alt="logo">
+						</div>
+					</div>
+
+
+					<div class="personal__password-form-wrapper personal__password-form-wrapper--change-name">
+						<p class="personal__status">«Мы есть то, что мы едим»<br>-Гиппократ</p>
+						<form  class="personal__password-form">
+							<h2>Изменение имени</h2>
+							<p>Прежнее имя: Nest</p>
+							<input type="" name="" placeholder="Введите новое имя">
+							<button type="button">Сохранить</button>
+						</form>
+
+					</div>
+				</div>
+			</section>
+
+			<section v-if="route=='history'" class="history">
+				<div class="container">
+					<h1>История заказов</h1>
+					<p class="history__subtitle">Отображаются данные за последние 30 дней</p>
+					<div class="history__background">
+						<p class="history__order-descr--status">Заказ № 12345</p>
+						<div class="history__order-descr">
+							<p>Дата заказа: 05.05.2002</p>
+							<p>Адрес доставки: Ардон</p>
+							<p>Стоимость: 2700р</p>
+						</div>
+
+						<ul class="cardsCanvas" v-if="mainNavRoute == 'restaurants'">
+							<li class="partnerRestaurantsCanvas" v-for="(restaurant, index) in searchRestaurantsCards" @click="route='restaurant'; RestaurantData.id=restaurant.id">
+								<div class="restaurantImageDescr">
+									<div class="restaurantImageDescrFlex">
+										<img :src="restaurant.image" class="partnerAdverstingRestaurantsImg" alt="Restaurant Image">
+									
+										<p class="partnerAdverstingRestaurantsProductDescr">{{restaurant.description}}</p>
+									</div>
+								</div>
+								<div class="partnerAdverstingRestaurantsDescr">
+									<div class="partnerAdverstingRestaurantName">{{restaurant.name}}</div>
+									<div class="partnerAdverstingRestaurantsStarCanvas">
+										<img src="styles/img/star.svg" alt="Star">
+										<div class="starCount">{{restaurant.stars}}</div>
+									</div>
+								</div>
+
+								<div class="partnerAdverstingRestaurantsDelivery">
+									<img src="styles/img/delivery.svg" alt="Delivery">
+									<p>От {{restaurant.free}}р</p>
+								</div>
+
+								<div class="home__restaurant-heart-icon" @click="restaurant.favorites=!restaurant.favorites; homeGetRestaurants()">
+									<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path v-if="restaurant.favorites" d="M16.7126 26.4875L26.8375 16.3625C29.325 13.8625 29.6875 9.77499 27.3375 7.16249C26.7482 6.50413 26.0308 5.97284 25.2292 5.60109C24.4276 5.22935 23.5586 5.02494 22.6753 5.00038C21.792 4.97581 20.913 5.13159 20.092 5.4582C19.2709 5.78482 18.5251 6.2754 17.9001 6.89999L16.0001 8.81249L14.3626 7.16249C11.8626 4.67499 7.77505 4.31249 5.16255 6.66249C4.50419 7.25185 3.9729 7.96925 3.60115 8.77086C3.22941 9.57248 3.02501 10.4415 3.00044 11.3248C2.97587 12.208 3.13165 13.087 3.45827 13.9081C3.78488 14.7291 4.27547 15.4749 4.90005 16.1L15.2876 26.4875C15.4771 26.6753 15.7332 26.7806 16.0001 26.7806C16.2669 26.7806 16.523 26.6753 16.7126 26.4875Z" fill="red" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+										<path v-else d="M16.7126 26.4875L26.8375 16.3625C29.325 13.8625 29.6875 9.77499 27.3375 7.16249C26.7482 6.50413 26.0308 5.97284 25.2292 5.60109C24.4276 5.22935 23.5586 5.02494 22.6753 5.00038C21.792 4.97581 20.913 5.13159 20.092 5.4582C19.2709 5.78482 18.5251 6.2754 17.9001 6.89999L16.0001 8.81249L14.3626 7.16249C11.8626 4.67499 7.77505 4.31249 5.16255 6.66249C4.50419 7.25185 3.9729 7.96925 3.60115 8.77086C3.22941 9.57248 3.02501 10.4415 3.00044 11.3248C2.97587 12.208 3.13165 13.087 3.45827 13.9081C3.78488 14.7291 4.27547 15.4749 4.90005 16.1L15.2876 26.4875C15.4771 26.6753 15.7332 26.7806 16.0001 26.7806C16.2669 26.7806 16.523 26.6753 16.7126 26.4875Z" fill="white" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section v-if="route=='discounts'" class="discounts">
+				<div class="container">
+					<h1 class="discounts__title">Предложения партнеров</h1>
+					<div class="discounts__wrapper">
+						<li class="partnerAdverstingElem" v-for="(card, index) in discountsSlides" :style="{backgroundColor: (card.backgroundColor)}">
+							<p class="partnerAdverstingDescr">{{card.p}}</p>
+						</li>
 					</div>
 				</div>
 			</section>

@@ -1,0 +1,73 @@
+.history
+{
+	width: 100%;
+}
+.history h1
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 42px;
+	color: #000000;
+	padding: 50px 0 13px;
+	text-align: center;
+}
+.history__subtitle
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #646464;
+	margin-bottom: 41px;
+	text-align: center;
+}
+.history__order-descr>p, .history__order-descr--status
+{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+
+	color: #000000;
+}
+.history__order-descr>p:not(:last-child)
+{
+	margin-bottom: 30px;
+}
+.history__order-descr--status
+{
+	text-align: center;
+	margin-bottom: 34px;
+}
+.history__background
+{
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	padding: 40px 30px;
+	margin-bottom: 40px;
+}
+.history__order-descr
+{
+	padding-bottom: 21px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #808080;
+}
+.history .partnerRestaurantsCanvas
+{
+	max-width: 400px;
+	min-width: 320px;
+}
+@media(max-width: 720px)
+{
+	.history__background
+	{
+		box-shadow: none;
+	}
+}
+
+
